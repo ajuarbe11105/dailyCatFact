@@ -70,21 +70,24 @@ struct ContentView: View {
     
     @StateObject var univ = ApiTest()
     var body: some View {
+        NavigationView {
         List {
             ForEach(univ.uni) { post in
                 VStack(alignment: .leading) {
                     Text(post.fact)
                         .font(.headline)
                         .foregroundColor(.blue)
-//                    Text(post.stateProvince ?? "")
-//                        .font(.headline)
+
                     
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
+           
+            }
+        }.navigationTitle("Cat Facts")
         }
     }
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
